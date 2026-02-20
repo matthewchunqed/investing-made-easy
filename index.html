@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rational Investing | Academic Foundations</title>
+    <title>Rational Investing | Foundations</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Charter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
@@ -63,33 +63,29 @@
             padding: 40vh 24px; 
         }
 
-        /* --- New "Clear View" Reveal Mechanics --- */
+        /* --- Reveal Mechanics --- */
         .reveal-node {
             opacity: 0;
             transform: translateY(20px);
-            /* Removed Blur entirely for eye comfort */
             transition: 
                 opacity var(--fade-speed) ease-out, 
                 transform var(--fade-speed) cubic-bezier(0.2, 1, 0.3, 1);
             margin-bottom: 3.5rem;
         }
 
-        /* Text becomes fully sharp and solid when in view */
         .reveal-node.in-focus {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Typography */
         h1, h2, .insight-label {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
         }
 
-        h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 2.5rem; color: #1a1e21; }
+        h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; color: #1a1e21; }
         h2 { font-size: 1.7rem; margin-top: 4rem; color: #34495e; }
 
-        /* Highlight Blocks */
         .insight-block {
             background: var(--muted-blue);
             padding: 1.8rem;
@@ -113,7 +109,6 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 15px 45px rgba(0,0,0,0.05);
-            transition: transform 1.2s ease;
         }
 
         img { width: 100%; display: block; }
@@ -123,31 +118,31 @@
 </head>
 <body>
 
-<div class="container">
+<div id="progress-container"><div id="progress-bar"></div></div>
+
+<div class="container" id="reading-content">
     <header class="reveal-node">
         <div class="meta-info">
             <span id="reading-time">Calculating...</span>
             <span>Academic Foundations</span>
         </div>
         <h1>Investing with Evidence</h1>
-        <p style="font-style: italic; color: #636e72;">How academic research replaces speculation with rational strategy.</p>
+        <p style="font-style: italic; color: #636e72;">Replacing speculation with the science of capital markets.</p>
     </header>
 
     <section>
         <h2 class="reveal-node">The Efficiency Principle</h2>
-        <p class="reveal-node">The core of rational investing is the **Efficient Market Hypothesis**. In a world of instant communication, information travels at the speed of light. By the time you read a news headline about a stock, the price has likely already adjusted to reflect that news.</p>
+        <p class="reveal-node">Efficient Market Hypothesis (EMH) is the bedrock of rational investing. It suggests that in a competitive market, prices reflect all available information. This means that "beating the market" isn't just difficult—it's mathematically improbable over the long term.</p>
         
-        <p class="reveal-node">For a beginner, this is actually good news. It means you don't have to be a "genius" to get a fair price; the market is doing the hard work of pricing for you.</p>
-
         <div class="reveal-node insight-block">
             <span class="insight-label">The Core Insight</span>
-            If markets are efficient, the only way to get higher returns is to take on more <strong>systemic risk</strong>, not by trying to outsmart other traders.
+            If markets are efficient, your goal isn't to find "undervalued" stocks, but to choose a level of risk that matches your long-term goals.
         </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">Quantifying Risk</h2>
-        <p class="reveal-node">Academic research uses math to separate "luck" from "skill." One of the most famous formulas is the Sharpe Ratio, which helps us understand if a return is worth the "rollercoaster" ride required to get it:</p>
+        <h2 class="reveal-node">The Sharpe Ratio</h2>
+        <p class="reveal-node">How do we measure if a return was actually "earned" or just a result of blind luck? We use the Sharpe Ratio to calculate the excess return per unit of risk.</p>
 
         
 
@@ -155,37 +150,49 @@
             $$S_p = \frac{R_p - R_f}{\sigma_p}$$
         </div>
 
-        <p class="reveal-node">Essentially, we are looking for the most "bang for our buck." We want the highest possible return ($R_p$) for every unit of volatility ($\sigma_p$) we endure.</p>
+        <p class="reveal-node">A higher ratio indicates a more "efficient" investment—you are getting more return for the amount of stress (volatility) the portfolio causes.</p>
 
         <div class="reveal-node chart-wrapper">
-            <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=1200&auto=format&fit=crop" alt="Data visualization of market trends">
+            <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=1200&auto=format&fit=crop" alt="Financial trend data visualization">
         </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">The Diversification Shield</h2>
-        <p class="reveal-node">Diversification is often called the "only free lunch" in finance. By spreading your investments across thousands of companies globally, you eliminate the risk of any single company going to zero affecting your livelihood.</p>
+        <h2 class="reveal-node">Strategic Diversification</h2>
+        <p class="reveal-node">Modern Portfolio Theory (MPT) argues that you can reduce risk without necessarily reducing return. This is achieved by holding assets that don't move in perfect lockstep.</p>
 
         
 
 [Image of a diversified portfolio pie chart]
 
 
-        <p class="reveal-node">When you own the whole market, you are betting on human ingenuity and global growth rather than the survival of a single CEO or product. It is the ultimate rational hedge against the unknown.</p>
+        <p class="reveal-node">By holding thousands of global companies, the failure of one is offset by the success of another. This "diversification shield" is the only rational way for a beginner to survive the inherent uncertainty of global markets.</p>
     </section>
 
     <footer class="reveal-node">
-        ACADEMIC SERIES | 2026
+        DATA-DRIVEN SERIES | 2026
     </footer>
 </div>
 
 <script>
-    /**
-     * ADJUSTED OBSERVER:
-     * We've changed the rootMargin so the "fade out" at the top is much 
-     * less aggressive (only 5% from the top).
-     * The "reveal" at the bottom stays at 25% to keep the scrollbar disguised.
-     */
+    // 1. Reading Time Logic
+    function calculateReadingTime() {
+        const text = document.getElementById('reading-content').innerText;
+        const wpm = 225; // Average reading speed
+        const words = text.trim().split(/\s+/).length;
+        const time = Math.ceil(words / wpm);
+        document.getElementById('reading-time').innerText = `${time} MIN READ`;
+    }
+
+    // 2. Progress Bar Logic
+    window.onscroll = function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+
+    // 3. Spotlight Reveal Logic
     const observerOptions = {
         root: null,
         rootMargin: '-5% 0px -25% 0px', 
@@ -205,10 +212,12 @@
     document.querySelectorAll('.reveal-node').forEach(node => {
         revealObserver.observe(node);
     });
+
+    window.onload = calculateReadingTime;
 </script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src=""https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js""></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 </body>
 </html>

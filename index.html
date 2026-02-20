@@ -28,6 +28,35 @@
             margin: 0;
         }
 
+        /* Progress Bar & Header Stats */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1000;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-blue);
+            transition: width 0.1s ease;
+        }
+
+        .meta-info {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 20px;
+        }
+
         .container {
             max-width: 660px;
             margin: 0 auto;
@@ -96,6 +125,10 @@
 
 <div class="container">
     <header class="reveal-node">
+        <div class="meta-info">
+            <span id="reading-time">Calculating...</span>
+            <span>Academic Foundations</span>
+        </div>
         <h1>Investing with Evidence</h1>
         <p style="font-style: italic; color: #636e72;">How academic research replaces speculation with rational strategy.</p>
     </header>

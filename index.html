@@ -3,219 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Deep Dive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <title>Nature's Architecture | A Soft Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- Base Styles & "Softness" Settings --- */
         :root {
-            /* A creamy, warm off-white background reduces harsh glare compared to pure white */
-            --bg-color: #fdfcf8; 
-            /* A soft charcoal instead of pure black is much easier on the eyes */
-            --text-color: #3d3d42;
-            /* A subtle accent color for calming highlights */
-            --accent-color: #a0b0a5; 
+            --bg-color: #fdfcf8; /* Creamy off-white to reduce eye strain */
+            --text-primary: #3d3d42; /* Soft charcoal */
+            --accent-sage: #a0b0a5;
+            --transition-speed: 0.9s;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        /* --- Disguising the Scrollbar --- */
+        ::-webkit-scrollbar { display: none; }
+        html { 
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            scroll-behavior: smooth; 
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            /* Lora is an excellent serif font optimized for screen reading */
+            color: var(--text-primary);
             font-family: 'Lora', serif;
-            /* Large base font size for easy scanning */
-            font-size: 19px; 
-            /* Generous line-height prevents lines from blurring together */
-            line-height: 1.8; 
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
+            font-size: 20px;
+            line-height: 1.8;
+            margin: 0;
+            overflow-x: hidden;
         }
 
-        /* --- Layout & Container --- */
         .container {
-            /* Narrow max-width is CRITICAL. It makes text blocks look shorter and easier to track lines. */
-            max-width: 720px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 80px 24px;
+            /* Creates a buffer so the reader starts and ends with a clean screen */
+            padding: 40vh 24px; 
         }
 
-        /* --- Typography Styling --- */
-        h1, h2, h3 {
-            /* Poppins provides a clean, friendly contrast to the body serif */
-            font-family: 'Poppins', sans-serif;
-            color: #2a2a2e; /* Slightly darker for hierarchy */
-            line-height: 1.3;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: 1.75rem;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            /* A subtle underline element to break up sections visually */
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background-color: var(--accent-color);
-            opacity: 0.6;
-            border-radius: 2px;
-        }
-
-        p {
-            margin-bottom: 2rem;
-            /* This ensures paragraphs don't look like dense blocks */
-        }
-
-        /* A special class for introductory paragraphs */
-        .lead {
-            font-size: 1.15em;
-            color: #55555e;
+        /* --- The Reveal Mechanics --- */
+        .reveal-node {
+            opacity: 0;
+            filter: blur(8px);
+            transform: translateY(25px);
+            transition: 
+                opacity var(--transition-speed) ease, 
+                filter var(--transition-speed) ease, 
+                transform var(--transition-speed) cubic-bezier(0.22, 1, 0.36, 1);
             margin-bottom: 3rem;
         }
 
-        /* --- Image Expanding Styles --- */
-        .image-container {
-            margin: 4rem 0;
-            overflow: hidden; /* Ensures the image doesn't spill out during animation */
-            border-radius: 12px;
-            /* Subtle shadow that will lift on expansion */
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: box-shadow 0.8s ease-out;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            /* Initial state: slightly smaller, lower opacity, slightly blurred */
-            transform: scale(0.94);
-            opacity: 0.85;
-            filter: blur(2px);
-            /* Smooth transition for the expansion effect */
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        /* This class gets added by Javascript when the image enters the viewport */
-        .image-container.is-visible {
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-        }
-
-        .image-container.is-visible img {
-            /* Final state: full size, full opacity, sharp */
-            transform: scale(1);
+        /* When the item enters the "Spotlight" (center of screen) */
+        .reveal-node.in-focus {
             opacity: 1;
             filter: blur(0);
+            transform: translateY(0);
+        }
+
+        /* --- Specific Element Styles --- */
+        h1, h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #2a2a2e;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 2rem; }
+        h2 { font-size: 1.8rem; margin-top: 4rem; }
+
+        .image-wrapper {
+            margin: 5rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            /* Image specific animation: expands slightly */
+            transform: scale(0.9); 
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-node.in-focus.image-wrapper {
+            transform: scale(1);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            display: block;
+        }
+
+        .lead-text {
+            font-size: 1.2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 100px 0;
+            opacity: 0.4;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <h1>The Hidden Architecture of Natural Systems</h1>
-        <p class="lead">Understanding complex biological patterns doesn't require a degree in advanced mathematics. By observing the fundamental rules governing growth and adaptation, we unlock a simpler view of the world around us.</p>
+    <header class="reveal-node">
+        <h1>The Architecture of Natural Systems</h1>
+        <p class="lead-text">A journey through the patterns that define our world, designed for a focused, quiet mind.</p>
     </header>
 
     <section>
-        <h2>The Rule of Self-Similarity</h2>
-        <p>At the heart of many complex natural structures lies the concept of self-similarity. This is the idea that an object appears roughly the same at different scales. When you zoom in on a small part of the structure, it resembles the whole.</p>
+        <h2 class="reveal-node">Self-Similarity</h2>
+        <p class="reveal-node">Nature rarely builds in straight lines. Instead, it builds in loops and echoes. This is the principle of self-similarity: the idea that a small part of a structure looks exactly like the whole.</p>
         
-        <p>Think of a fern frond. The entire frond is made up of smaller "pinnae" branching off the main stem. Each of those pinnae is essentially a miniature version of the whole frond. And those pinnae are made up of even smaller pinnules, which again look like tiny fronds. Nature uses this repetitive, recursive instruction set to build incredibly complex shapes from very simple genetic code.</p>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1638562813176-60d3768a6972?q=80&w=1400&auto=format&fit=crop" alt="A close up of a fern leaf showing fractal patterns">
+        <div class="reveal-node image-wrapper">
+            <img src="https://images.unsplash.com/photo-1638562813176-60d3768a6972?q=80&w=1200&auto=format&fit=crop" alt="Fractal fern">
         </div>
 
-        <p>This isn't just aesthetically pleasing; it's efficient. A plant doesn't need a unique blueprint for every single leaf. It just needs a single rule: "grow a stem, branch off, repeat at a smaller scale." This mathematical efficiency is found everywhere, from the branching of our blood vessels to the jagged coastline of a continent.</p>
+        <p class="reveal-node">Observe a fern. The tiny leaflets are smaller versions of the larger branch, which is a smaller version of the entire plant. By following one simple rule of growth, nature creates complexity that appears infinite yet remains fundamentally simple to understand.</p>
     </section>
 
     <section>
-        <h2>Emergence in Collective Behavior</h2>
-        <p>Another fascinating aspect of natural systems is emergence. Emergence occurs when complex patterns arise out of a multiplicity of relatively simple interactions. The "whole" becomes something greater and different than the mere sum of its parts.</p>
+        <h2 class="reveal-node">Emergent Intelligence</h2>
+        <p class="reveal-node">How do thousands of individual birds move as a single, fluid wave? This is emergence. There is no leader; there is only a set of local interactions that result in global harmony.</p>
 
-        <p>Consider a flock of starlings flying in a murmuration. These massive, shifting clouds of birds seem to move as a single, intelligent organism. Yet, there is no leader bird barking orders. There is no central choreography.</p>
-
-         <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1565092233481-b793d6c4e78e?q=80&w=1400&auto=format&fit=crop" alt="A massive murmuration of starlings against a sunset sky">
+        <div class="reveal-node image-wrapper">
+            <img src="https://images.unsplash.com/photo-1565092233481-b793d6c4e78e?q=80&w=1200&auto=format&fit=crop" alt="Bird murmuration">
         </div>
 
-        <p>Instead, each individual bird is following three very simple rules based only on its immediate neighbors: separation (don't crowd your neighbors), alignment (steer in the average direction of your neighbors), and cohesion (steer toward the average position of your neighbors). When thousands of birds follow these local rules simultaneously, the magnificent, swirling patterns of the flock emerge spontaneously.</p>
-        
-        <p>This principle teaches us that complex, adaptive behavior at a "macro" level often stems from very simple, localized rules at the "micro" level. It changes how we look at everything from ant colonies to brain neurons.</p>
+        <p class="reveal-node">Each bird simply monitors the six or seven neighbors closest to it. By maintaining a specific distance and matching their speed, the flock "thinks" as one. Complexity is not managed from the top down; it blossoms from the bottom up.</p>
     </section>
-    
+
     <section>
-        <h2>The Economy of Form</h2>
-        <p>Finally, nature is the ultimate economist. Energy is expensive in the biological world, so natural selection favors forms that perform their function using the minimum amount of materials and energy. This leads to elegant solutions to physical problems.</p>
+        <h2 class="reveal-node">Structural Economy</h2>
+        <p class="reveal-node">The hexagonal cells of a honeycomb aren't a stylistic choice by the bees. They are a mathematical necessity. The hexagon is the shape that allows for the maximum storage of honey with the minimum expenditure of wax.</p>
 
-        <p>The hexagonal structure of a honeycomb is a perfect example. Why hexagons? If you want to tile a flat surface with identical shapes without leaving any gaps, you can only use triangles, squares, or hexagons. Of these three, the hexagon encloses the most usable area for the least amount of wall perimeter (wax). Bees have essentially "solved" a mathematical optimization problem to conserve energy while maximizing storage.</p>
-
-        <div class="image-container">
-            <img src="https://images.unsplash.com/photo-1589553668555-6c449956e229?q=80&w=1400&auto=format&fit=crop" alt="Close up texture of a natural honeycomb">
+        <div class="reveal-node image-wrapper">
+            <img src="https://images.unsplash.com/photo-1589553668555-6c449956e229?q=80&w=1200&auto=format&fit=crop" alt="Honeycomb pattern">
         </div>
 
-        <p>By studying these three pillars—self-similarity, emergence, and economy of form—we gain a lens through which the chaotic complexity of the natural world transforms into a series of elegant, understandable patterns. The text of nature is long, but the alphabet it uses is surprisingly simple.</p>
+        <p class="reveal-node">In this design, we see the ultimate efficiency. Nature does not waste. Every curve and every angle serves a purpose, ensuring that energy is preserved and life is sustained through the most elegant means possible.</p>
     </section>
 
-    <footer style="margin-top: 5rem; text-align: center; color: #a0b0a5; font-size: 0.9em;">
-        <p>End of Educational Material</p>
+    <footer class="reveal-node">
+        FIN
     </footer>
 </div>
 
 <script>
-    // --- JavaScript for Expanding Images on Scroll ---
+    /**
+     * The Spotlight Logic:
+     * This Intersection Observer watches the 'reveal-node' elements.
+     * The rootMargin '-15% 0px -15% 0px' creates a "dead zone" at the top and bottom.
+     * Elements only get the 'in-focus' class when they enter the middle 70% of the screen.
+     */
+    const observerOptions = {
+        root: null,
+        rootMargin: '-15% 0px -15% 0px', 
+        threshold: 0.1
+    };
 
-    document.addEventListener("DOMContentLoaded", () => {
-        // 1. Select all the containers holding images we want to animate
-        const imageContainers = document.querySelectorAll('.image-container');
-
-        // 2. Define the options for the Intersection Observer
-        const options = {
-            root: null, // Use the browser viewport as the container
-            rootMargin: '0px', // No margin
-            threshold: 0.3 // Trigger when 30% of the image is visible in the viewport
-        };
-
-        // 3. Define the callback function that runs when intersection changes
-        const observerCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                // If the image is intersecting (visible in viewport past threshold)
-                if (entry.isIntersecting) {
-                    // Add the class that triggers the CSS expansion animation
-                    entry.target.classList.add('is-visible');
-                }
-                 // Optional: Uncomment the 'else' block if you want them to shrink back when scrolling away
-                 /* else {
-                    entry.target.classList.remove('is-visible');
-                } */
-            });
-        };
-
-        // 4. Create the observer instance
-        const observer = new IntersectionObserver(observerCallback, options);
-
-        // 5. Tell the observer to watch each image container
-        imageContainers.forEach(container => {
-            observer.observe(container);
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-focus');
+            } else {
+                // Remove this 'else' if you want text to stay visible once revealed
+                entry.target.classList.remove('in-focus');
+            }
         });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-node').forEach(node => {
+        revealObserver.observe(node);
     });
 </script>
 

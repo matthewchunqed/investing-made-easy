@@ -3,161 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nature's Architecture | A Soft Study</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <title>Rational Investing | Foundations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Charter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #fdfcf8; /* Creamy off-white to reduce eye strain */
-            --text-primary: #3d3d42; /* Soft charcoal */
-            --accent-sage: #a0b0a5;
-            --transition-speed: 0.9s;
+            /* Optimized for "Financial Trust" */
+            --bg-color: #fcfdfe; 
+            --text-main: #2d3436;
+            --accent-blue: #54a0ff;
+            --muted-blue: #f0f4f8;
+            --focus-transition: 1.1s;
         }
 
-        /* --- Disguising the Scrollbar --- */
+        /* Disguise the scroll depth */
         ::-webkit-scrollbar { display: none; }
-        html { 
-            scrollbar-width: none; 
-            -ms-overflow-style: none;
-            scroll-behavior: smooth; 
-        }
+        html { scrollbar-width: none; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Lora', serif;
-            font-size: 20px;
-            line-height: 1.8;
+            color: var(--text-main);
+            /* 'Charter' or 'Lora' feels like a high-end research paper */
+            font-family: 'Charter', 'Georgia', serif;
+            font-size: 21px;
+            line-height: 1.85;
             margin: 0;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 680px;
             margin: 0 auto;
-            /* Creates a buffer so the reader starts and ends with a clean screen */
-            padding: 40vh 24px; 
+            padding: 45vh 24px; /* Start content in middle of screen */
         }
 
-        /* --- The Reveal Mechanics --- */
+        /* --- Spotlight Reveal Effects --- */
         .reveal-node {
             opacity: 0;
-            filter: blur(8px);
-            transform: translateY(25px);
+            filter: blur(10px);
+            transform: translateY(30px);
             transition: 
-                opacity var(--transition-speed) ease, 
-                filter var(--transition-speed) ease, 
-                transform var(--transition-speed) cubic-bezier(0.22, 1, 0.36, 1);
-            margin-bottom: 3rem;
+                opacity var(--focus-transition) ease, 
+                filter var(--focus-transition) ease, 
+                transform var(--focus-transition) cubic-bezier(0.2, 1, 0.3, 1);
+            margin-bottom: 3.5rem;
         }
 
-        /* When the item enters the "Spotlight" (center of screen) */
         .reveal-node.in-focus {
             opacity: 1;
             filter: blur(0);
             transform: translateY(0);
         }
 
-        /* --- Specific Element Styles --- */
-        h1, h2 {
-            font-family: 'Poppins', sans-serif;
-            color: #2a2a2e;
-            line-height: 1.3;
+        /* --- Typography --- */
+        h1, h2, .insight-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
-        h1 { font-size: 3rem; margin-bottom: 2rem; }
-        h2 { font-size: 1.8rem; margin-top: 4rem; }
+        h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 3rem; color: #1a1e21; }
+        h2 { font-size: 1.9rem; margin-top: 5rem; color: #34495e; }
 
-        .image-wrapper {
-            margin: 5rem 0;
-            border-radius: 15px;
+        /* --- Insight Blocks for Beginners --- */
+        .insight-block {
+            background: var(--muted-blue);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--accent-blue);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .insight-label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Image/Chart Expansion --- */
+        .chart-wrapper {
+            margin: 6rem -40px; /* Pulls image slightly wider than text for visual relief */
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            /* Image specific animation: expands slightly */
-            transform: scale(0.9); 
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            transform: scale(0.92);
+            transition: transform 1.5s cubic-bezier(0.1, 1, 0.2, 1);
         }
 
-        .reveal-node.in-focus.image-wrapper {
+        .reveal-node.in-focus.chart-wrapper {
             transform: scale(1);
         }
 
-        .image-wrapper img {
-            width: 100%;
-            display: block;
-        }
+        img { width: 100%; display: block; }
 
-        .lead-text {
-            font-size: 1.2rem;
-            color: #666;
-            font-style: italic;
-        }
-
-        footer {
-            text-align: center;
-            padding: 100px 0;
-            opacity: 0.4;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-        }
+        footer { text-align: center; padding: 15vh 0; opacity: 0.3; font-family: 'Inter'; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header class="reveal-node">
-        <h1>The Architecture of Natural Systems</h1>
-        <p class="lead-text">A journey through the patterns that define our world, designed for a focused, quiet mind.</p>
+        <h1>The Myth of the Market Beater</h1>
+        <p style="font-style: italic; color: #636e72;">An introduction to evidence-based investing and the Efficient Market Hypothesis.</p>
     </header>
 
     <section>
-        <h2 class="reveal-node">Self-Similarity</h2>
-        <p class="reveal-node">Nature rarely builds in straight lines. Instead, it builds in loops and echoes. This is the principle of self-similarity: the idea that a small part of a structure looks exactly like the whole.</p>
+        <h2 class="reveal-node">1. The Wisdom of the Crowd</h2>
+        <p class="reveal-node">Imagine a jar filled with jellybeans. If you ask one person to guess how many are inside, they will likely be far off. But if you ask 1,000 people and take the average, that average is usually shockingly close to the truth.</p>
         
-        <div class="reveal-node image-wrapper">
-            <img src="https://images.unsplash.com/photo-1638562813176-60d3768a6972?q=80&w=1200&auto=format&fit=crop" alt="Fractal fern">
-        </div>
+        <p class="reveal-node">The stock market works similarly. Millions of participants—from PhD researchers to high-speed algorithms—are constantly "guessing" the value of a company. The current price of a stock is simply the aggregate of all available information.</p>
 
-        <p class="reveal-node">Observe a fern. The tiny leaflets are smaller versions of the larger branch, which is a smaller version of the entire plant. By following one simple rule of growth, nature creates complexity that appears infinite yet remains fundamentally simple to understand.</p>
+        <div class="reveal-node insight-block">
+            <span class="insight-label">Key Concept: EMH</span>
+            The <strong>Efficient Market Hypothesis (EMH)</strong> suggests that because all known info is already baked into the price, you cannot "beat" the market consistently through luck or skill.
+        </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">Emergent Intelligence</h2>
-        <p class="reveal-node">How do thousands of individual birds move as a single, fluid wave? This is emergence. There is no leader; there is only a set of local interactions that result in global harmony.</p>
+        <h2 class="reveal-node">2. Risk, Reward, and Math</h2>
+        <p class="reveal-node">In academic finance, we don't look for "hot tips." We look for <em>factors</em>. The most fundamental equation is that expected return is directly tied to the risk you are willing to take. This is often expressed through the Capital Asset Pricing Model:</p>
 
-        <div class="reveal-node image-wrapper">
-            <img src="https://images.unsplash.com/photo-1565092233481-b793d6c4e78e?q=80&w=1200&auto=format&fit=crop" alt="Bird murmuration">
+        <div class="reveal-node" style="text-align: center; padding: 2rem 0;">
+            $$E(R_i) = R_f + \beta_i(E(R_m) - R_f)$$
         </div>
 
-        <p class="reveal-node">Each bird simply monitors the six or seven neighbors closest to it. By maintaining a specific distance and matching their speed, the flock "thinks" as one. Complexity is not managed from the top down; it blossoms from the bottom up.</p>
+        <p class="reveal-node">This formula tells us that your return ($E(R_i)$) is the "risk-free rate" plus a bonus for taking on the volatility of the market ($\beta$). To get more, you must endure more "up and down" movement.</p>
+
+        <div class="reveal-node chart-wrapper">
+            <img src="https://images.unsplash.com/photo-1611974717482-58a2523d51c1?q=80&w=1200&auto=format&fit=crop" alt="Abstract financial data chart">
+        </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">Structural Economy</h2>
-        <p class="reveal-node">The hexagonal cells of a honeycomb aren't a stylistic choice by the bees. They are a mathematical necessity. The hexagon is the shape that allows for the maximum storage of honey with the minimum expenditure of wax.</p>
+        <h2 class="reveal-node">3. Diversification: The Only Free Lunch</h2>
+        <p class="reveal-node">If the market is efficient, how do we win? We don't try to find the "needle" in the haystack; we buy the whole haystack. By owning a piece of every company in the world via index funds, we eliminate "idiosyncratic risk"—the risk that one specific CEO makes a bad mistake.</p>
 
-        <div class="reveal-node image-wrapper">
-            <img src="https://images.unsplash.com/photo-1589553668555-6c449956e229?q=80&w=1200&auto=format&fit=crop" alt="Honeycomb pattern">
+        <div class="reveal-node insight-block">
+            <span class="insight-label">The Rational Move</span>
+            Academic research shows that over a 20-year period, passive index investors outperform roughly 90% of professional active fund managers.
         </div>
 
-        <p class="reveal-node">In this design, we see the ultimate efficiency. Nature does not waste. Every curve and every angle serves a purpose, ensuring that energy is preserved and life is sustained through the most elegant means possible.</p>
+        <p class="reveal-node">Rational investing isn't about being smarter than everyone else; it's about being more disciplined than everyone else. It's the move from <em>speculation</em> to <em>stewardship</em>.</p>
     </section>
 
     <footer class="reveal-node">
-        FIN
+        DATA-DRIVEN INSIGHTS | 2026
     </footer>
 </div>
 
 <script>
-    /**
-     * The Spotlight Logic:
-     * This Intersection Observer watches the 'reveal-node' elements.
-     * The rootMargin '-15% 0px -15% 0px' creates a "dead zone" at the top and bottom.
-     * Elements only get the 'in-focus' class when they enter the middle 70% of the screen.
-     */
     const observerOptions = {
         root: null,
-        rootMargin: '-15% 0px -15% 0px', 
+        rootMargin: '-10% 0px -20% 0px', 
         threshold: 0.1
     };
 
@@ -166,7 +165,6 @@
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-focus');
             } else {
-                // Remove this 'else' if you want text to stay visible once revealed
                 entry.target.classList.remove('in-focus');
             }
         });
@@ -176,6 +174,9 @@
         revealObserver.observe(node);
     });
 </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 </html>

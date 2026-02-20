@@ -3,72 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rational Investing | Foundations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Charter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Rational Investing | Academic Foundations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Charter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Optimized for "Financial Trust" */
-            --bg-color: #fcfdfe; 
+            --bg-color: #fdfdfe; 
             --text-main: #2d3436;
-            --accent-blue: #54a0ff;
-            --muted-blue: #f0f4f8;
-            --focus-transition: 1.1s;
+            --accent-blue: #4a90e2;
+            --muted-blue: #f4f7fa;
+            --fade-speed: 0.8s;
         }
 
-        /* Disguise the scroll depth */
+        /* Hide Scrollbar */
         ::-webkit-scrollbar { display: none; }
         html { scrollbar-width: none; scroll-behavior: smooth; }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            /* 'Charter' or 'Lora' feels like a high-end research paper */
-            font-family: 'Charter', 'Georgia', serif;
-            font-size: 21px;
-            line-height: 1.85;
+            font-family: 'Charter', serif;
+            font-size: 20px;
+            line-height: 1.8;
             margin: 0;
         }
 
         .container {
-            max-width: 680px;
+            max-width: 660px;
             margin: 0 auto;
-            padding: 45vh 24px; /* Start content in middle of screen */
+            padding: 40vh 24px; 
         }
 
-        /* --- Spotlight Reveal Effects --- */
+        /* --- New "Clear View" Reveal Mechanics --- */
         .reveal-node {
             opacity: 0;
-            filter: blur(10px);
-            transform: translateY(30px);
+            transform: translateY(20px);
+            /* Removed Blur entirely for eye comfort */
             transition: 
-                opacity var(--focus-transition) ease, 
-                filter var(--focus-transition) ease, 
-                transform var(--focus-transition) cubic-bezier(0.2, 1, 0.3, 1);
+                opacity var(--fade-speed) ease-out, 
+                transform var(--fade-speed) cubic-bezier(0.2, 1, 0.3, 1);
             margin-bottom: 3.5rem;
         }
 
+        /* Text becomes fully sharp and solid when in view */
         .reveal-node.in-focus {
             opacity: 1;
-            filter: blur(0);
             transform: translateY(0);
         }
 
-        /* --- Typography --- */
+        /* Typography */
         h1, h2, .insight-label {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            letter-spacing: -0.02em;
         }
 
-        h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 3rem; color: #1a1e21; }
-        h2 { font-size: 1.9rem; margin-top: 5rem; color: #34495e; }
+        h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 2.5rem; color: #1a1e21; }
+        h2 { font-size: 1.7rem; margin-top: 4rem; color: #34495e; }
 
-        /* --- Insight Blocks for Beginners --- */
+        /* Highlight Blocks */
         .insight-block {
             background: var(--muted-blue);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 1.8rem;
+            border-radius: 12px;
             border-left: 4px solid var(--accent-blue);
             font-size: 0.95rem;
             line-height: 1.6;
@@ -77,86 +73,89 @@
         .insight-label {
             display: block;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--accent-blue);
+            letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
 
-        /* --- Image/Chart Expansion --- */
         .chart-wrapper {
-            margin: 6rem -40px; /* Pulls image slightly wider than text for visual relief */
-            border-radius: 12px;
+            margin: 5rem 0;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-            transform: scale(0.92);
-            transition: transform 1.5s cubic-bezier(0.1, 1, 0.2, 1);
-        }
-
-        .reveal-node.in-focus.chart-wrapper {
-            transform: scale(1);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.05);
+            transition: transform 1.2s ease;
         }
 
         img { width: 100%; display: block; }
 
-        footer { text-align: center; padding: 15vh 0; opacity: 0.3; font-family: 'Inter'; font-size: 0.8rem; }
+        footer { text-align: center; padding: 20vh 0; opacity: 0.2; font-family: 'Inter'; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header class="reveal-node">
-        <h1>The Myth of the Market Beater</h1>
-        <p style="font-style: italic; color: #636e72;">An introduction to evidence-based investing and the Efficient Market Hypothesis.</p>
+        <h1>Investing with Evidence</h1>
+        <p style="font-style: italic; color: #636e72;">How academic research replaces speculation with rational strategy.</p>
     </header>
 
     <section>
-        <h2 class="reveal-node">1. The Wisdom of the Crowd</h2>
-        <p class="reveal-node">Imagine a jar filled with jellybeans. If you ask one person to guess how many are inside, they will likely be far off. But if you ask 1,000 people and take the average, that average is usually shockingly close to the truth.</p>
+        <h2 class="reveal-node">The Efficiency Principle</h2>
+        <p class="reveal-node">The core of rational investing is the **Efficient Market Hypothesis**. In a world of instant communication, information travels at the speed of light. By the time you read a news headline about a stock, the price has likely already adjusted to reflect that news.</p>
         
-        <p class="reveal-node">The stock market works similarly. Millions of participants—from PhD researchers to high-speed algorithms—are constantly "guessing" the value of a company. The current price of a stock is simply the aggregate of all available information.</p>
+        <p class="reveal-node">For a beginner, this is actually good news. It means you don't have to be a "genius" to get a fair price; the market is doing the hard work of pricing for you.</p>
 
         <div class="reveal-node insight-block">
-            <span class="insight-label">Key Concept: EMH</span>
-            The <strong>Efficient Market Hypothesis (EMH)</strong> suggests that because all known info is already baked into the price, you cannot "beat" the market consistently through luck or skill.
+            <span class="insight-label">The Core Insight</span>
+            If markets are efficient, the only way to get higher returns is to take on more <strong>systemic risk</strong>, not by trying to outsmart other traders.
         </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">2. Risk, Reward, and Math</h2>
-        <p class="reveal-node">In academic finance, we don't look for "hot tips." We look for <em>factors</em>. The most fundamental equation is that expected return is directly tied to the risk you are willing to take. This is often expressed through the Capital Asset Pricing Model:</p>
+        <h2 class="reveal-node">Quantifying Risk</h2>
+        <p class="reveal-node">Academic research uses math to separate "luck" from "skill." One of the most famous formulas is the Sharpe Ratio, which helps us understand if a return is worth the "rollercoaster" ride required to get it:</p>
 
-        <div class="reveal-node" style="text-align: center; padding: 2rem 0;">
-            $$E(R_i) = R_f + \beta_i(E(R_m) - R_f)$$
+        
+
+        <div class="reveal-node" style="text-align: center; padding: 2rem 0; font-size: 1.5rem;">
+            $$S_p = \frac{R_p - R_f}{\sigma_p}$$
         </div>
 
-        <p class="reveal-node">This formula tells us that your return ($E(R_i)$) is the "risk-free rate" plus a bonus for taking on the volatility of the market ($\beta$). To get more, you must endure more "up and down" movement.</p>
+        <p class="reveal-node">Essentially, we are looking for the most "bang for our buck." We want the highest possible return ($R_p$) for every unit of volatility ($\sigma_p$) we endure.</p>
 
         <div class="reveal-node chart-wrapper">
-            <img src="https://images.unsplash.com/photo-1611974717482-58a2523d51c1?q=80&w=1200&auto=format&fit=crop" alt="Abstract financial data chart">
+            <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=1200&auto=format&fit=crop" alt="Data visualization of market trends">
         </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">3. Diversification: The Only Free Lunch</h2>
-        <p class="reveal-node">If the market is efficient, how do we win? We don't try to find the "needle" in the haystack; we buy the whole haystack. By owning a piece of every company in the world via index funds, we eliminate "idiosyncratic risk"—the risk that one specific CEO makes a bad mistake.</p>
+        <h2 class="reveal-node">The Diversification Shield</h2>
+        <p class="reveal-node">Diversification is often called the "only free lunch" in finance. By spreading your investments across thousands of companies globally, you eliminate the risk of any single company going to zero affecting your livelihood.</p>
 
-        <div class="reveal-node insight-block">
-            <span class="insight-label">The Rational Move</span>
-            Academic research shows that over a 20-year period, passive index investors outperform roughly 90% of professional active fund managers.
-        </div>
+        
 
-        <p class="reveal-node">Rational investing isn't about being smarter than everyone else; it's about being more disciplined than everyone else. It's the move from <em>speculation</em> to <em>stewardship</em>.</p>
+[Image of a diversified portfolio pie chart]
+
+
+        <p class="reveal-node">When you own the whole market, you are betting on human ingenuity and global growth rather than the survival of a single CEO or product. It is the ultimate rational hedge against the unknown.</p>
     </section>
 
     <footer class="reveal-node">
-        DATA-DRIVEN INSIGHTS | 2026
+        ACADEMIC SERIES | 2026
     </footer>
 </div>
 
 <script>
+    /**
+     * ADJUSTED OBSERVER:
+     * We've changed the rootMargin so the "fade out" at the top is much 
+     * less aggressive (only 5% from the top).
+     * The "reveal" at the bottom stays at 25% to keep the scrollbar disguised.
+     */
     const observerOptions = {
         root: null,
-        rootMargin: '-10% 0px -20% 0px', 
+        rootMargin: '-5% 0px -25% 0px', 
         threshold: 0.1
     };
 

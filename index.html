@@ -133,6 +133,19 @@
     <section>
         <h2 class="reveal-node">The Ideas</h2>
         <p class="When you buy a company’s stock, you buy a fraction of that company. The price of that company is dictated entirely by its potential buyers, and supply-and-demand. Things such as earnings reports & new announcements may increase or decrease the prices we (the buyers) demand. We profit off the <b><i>difference in price</b></i> between now and when we want to sell, so we can maximize investments by <b>buying assets whose price we can expect to increase.</b>"</p>
+
+       <p class="reveal-node">Every year, the price of stocks in the market as a whole grows an average of 7% (ignoring inflation). But if we are the ones who set the prices – doesn’t that mean we’re pricing this year’s market 7% too low? And if we can expect increases, on average, every year then isn’t investing just free money?</p>
+
+        <p class="reveal-node">The answer is <b>no</b>, investing is not free money – because you are always taking a risk.</p>
+
+        <div class="reveal-node insight-block">
+            <span class="insight-label">Definition: <b>Risk</b></span>
+            <b>Risk is the ability for your money to not be there when you need it to be there. </b>
+        </div>
+
+        <p class="reveal-node">Money invested in the market grows 7% on average, but with high spread – some years will return negative %, and some years will skyrocket in growth. By investing in any company, you may lose all your money if certain catastrophic events happen: wars, natural disasters, or supply chain disruptions are all risks that affect all companies. These risks are undiversifiable risks, because there is no way to make a portfolio containing stocks that isn’t exposed to these risks.</p>
+        
+        <p class="reveal-node">Nobody would subject their money to these risks without expecting <b>additional profits as a reward for taking that risk.</b> For the same reason that banks won’t risk lending their money to you without requiring you to pay interest, investors (when deciding what price to buy at) can <b>demand a 7% discount on next year’s expected stock prices as payment for taking on market risk.</b> This risk-driven discount, named “the market premium”, is why investors can <b><i>expect</b></i> a profit (on average) each year. By exposing yourself to market risk in a sensible way, you can expect profits while doing <b>zero speculation.</b></p>
         
         <div class="reveal-node insight-block">
             <span class="insight-label">The Core Insight</span>
@@ -178,7 +191,7 @@
     // 1. Reading Time Logic
     function calculateReadingTime() {
         const text = document.getElementById('reading-content').innerText;
-        const wpm = 225; // Average reading speed
+        const wpm = 250; // Average reading speed
         const words = text.trim().split(/\s+/).length;
         const time = Math.ceil(words / wpm);
         document.getElementById('reading-time').innerText = `${time} MIN READ`;

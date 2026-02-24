@@ -13,6 +13,9 @@
             --accent-blue: #4a90e2;
             --muted-blue: #f4f7fa;
             --fade-speed: 0.8s;
+            --line-color: #333;
+            --text-color: #555;
+            --transition-speed: 0.5s;
         }
 
         /* Hide Scrollbar */
@@ -111,6 +114,61 @@
             box-shadow: 0 15px 45px rgba(0,0,0,0.05);
         }
 
+        .knowledge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; /* Provides space for the up/down expansion */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.caption {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.caption:hover {
+    opacity: 0.7;
+}
+
+.expandable-box {
+    width: 300px;
+    height: 1px; /* The "Thin Line" */
+    background-color: transparent;
+    border-top: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--line-color);
+    overflow: hidden;
+    cursor: pointer;
+    transition: height var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1), 
+                padding var(--transition-speed);
+}
+
+/* Expanded State */
+.expandable-box.open {
+    height: 150px; /* Adjust to fit your content */
+    padding: 20px 0;
+    border-top: 1px solid #eee; /* Lightens the borders when open */
+    border-bottom: 1px solid #eee;
+}
+
+.inner-content {
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    padding: 0 20px;
+}
+
+.expandable-box.open .inner-content {
+    opacity: 1;
+    transition-delay: 0.2s; /* Waits for the box to start opening */
+}
+
         img { width: 100%; display: block; }
 
         footer { text-align: center; padding: 20vh 0; opacity: 0.2; font-family: 'Inter'; font-size: 0.8rem; }
@@ -167,6 +225,18 @@
     </section>
 
     <section>
+
+        <div class="knowledge-container">
+    <p class="caption" onclick="toggleBox()">Test your knowledge</p>
+    
+    <div id="expandableBox" class="expandable-box" onclick="toggleBox()">
+        <div class="inner-content" id="content">
+            <h3>Did you know?</h3>
+            <p>GitHub Pages uses Jekyll by default, but you can use any static site generator as long as you push the final HTML files!</p>
+        </div>
+    </div>
+</div>
+        
         Part 2: So how do I use these ideas?<br>
         <a href="implementation.html" style="text-decoration: none; font-size: 30px;">&#10142;</a>
     </section>
@@ -193,6 +263,11 @@
         rootMargin: '-5% 0px -25% 0px', 
         threshold: 0.1
     };
+
+    function toggleBox() {
+    const box = document.getElementById('expandableBox');
+    box.classList.toggle('open');
+}
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

@@ -123,7 +123,7 @@
 <div class="container" id="reading-content">
     <header class="reveal-node">
         <div class="meta-info">
-            <span id="reading-time"></span>
+            <span id="reading-time">5 MIN READ</span>
         </div>
         <h1>Investing Made Easy</h1>
         <p style="font-style: italic; color: #636e72;">Investing can and should be as easy as washing dishes or doing laundry. On this page, I will explain how to invest in a simple, convenient way supported by decades of Nobel Prize-Winning research. The first portion will be dedicated to the ideas behind <i>what</i> the best way to invest is, and <i>why</i> that is the best way to invest. The second portion will discuss <i>how</i> to implement the ideas from the first section using currently available accounts and financial products to make a convenient, simple, highly-optimized & tax-efficient portfolio.
@@ -164,28 +164,11 @@
         <p class="reveal-node">This is why diversification can both increase your expected returns and decrease your expected risk. If you expect the market will grow in value every year by 7% on average (due to the risk discount), but that growth is powered entirely by just 4% of its companies, the data shows it is far more profitable to buy the haystack rather than compete to find the needle. </p>
 
         <p class="reveal-node"><b>The most important resource is time in the market</b>. Over time, your bad years will even out against your good years and your actual results will approach your expected results. That means <b>not investing is the most risky choice for meeting your long term financial goals</b>, whereas <b>stocks is the most risky choice for money you need today</b>.</p>
-        
-        <div class="reveal-node insight-block">
-            <span class="insight-label">The Core Insight</span>
-            If markets are efficient, your goal isn't to find "undervalued" stocks, but to choose a level of risk that matches your long-term goals.
-        </div>
     </section>
 
     <section>
-        <h2 class="reveal-node">Implementing Those Ideas Into A Portfolio</h2>
-        <p class="reveal-node">How do we measure if a return was actually "earned" or just a result of blind luck? We use the Sharpe Ratio to calculate the excess return per unit of risk.</p>
-
-        
-
-        <div class="reveal-node" style="text-align: center; padding: 2rem 0; font-size: 1.5rem;">
-            $$S_p = \frac{R_p - R_f}{\sigma_p}$$
-        </div>
-
-        <p class="reveal-node">A higher ratio indicates a more "efficient" investment—you are getting more return for the amount of stress (volatility) the portfolio causes.</p>
-
-        <div class="reveal-node chart-wrapper">
-            <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?q=80&w=1200&auto=format&fit=crop" alt="Financial trend data visualization">
-        </div>
+        Part 2: So how do I use these ideas?<br>
+        <a href="implementation.html" style="text-decoration: none; font-size: 30px;">&#10142;</a>
     </section>
 
 
@@ -195,14 +178,6 @@
 </div>
 
 <script>
-    // 1. Reading Time Logic
-    function calculateReadingTime() {
-        const text = document.getElementById('reading-content').innerText;
-        const wpm = 250; // Average reading speed
-        const words = text.trim().split(/\s+/).length;
-        const time = Math.floor(words / wpm);
-        document.getElementById('reading-time').innerText = `${time} MIN READ`;
-    }
 
     // 2. Progress Bar Logic
     window.onscroll = function() {
@@ -233,11 +208,9 @@
         revealObserver.observe(node);
     });
 
-    window.onload = calculateReadingTime;
 </script>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 </body>
 </html>

@@ -151,7 +151,7 @@
 
 /* Expanded State */
 .expandable-box.open {
-    height: 150px; /* Adjust to fit your content */
+    height: 250px; /* Adjust to fit your content */
     padding: 20px 0;
     border-top: 1px solid #eee; /* Lightens the borders when open */
     border-bottom: 1px solid #eee;
@@ -166,7 +166,7 @@
 
 .expandable-box.open .inner-content {
     opacity: 1;
-    transition-delay: 0.2s; /* Waits for the box to start opening */
+    transition-delay: 0.3s; /* Waits for the box to start opening */
 }
 
         img { width: 100%; display: block; }
@@ -227,12 +227,18 @@
     <section>
 
         <div class="knowledge-container">
-    <p class="caption" onclick="toggleBox()">Test your knowledge</p>
+    <p class="caption" onclick="toggleBox()">Test Your Knowledge</p>
     
     <div id="expandableBox" class="expandable-box" onclick="toggleBox()">
         <div class="inner-content" id="content">
-            <h3>Did you know?</h3>
-            <p>GitHub Pages uses Jekyll by default, but you can use any static site generator as long as you push the final HTML files!</p>
+            <p>Here is a bad portfolio.</p>
+            <img src="img1.png" alt="Fake Portfolio">
+            <p>40% is invested in the S&P 500 – the 500 most profitable companies in the world. The best companies in the world are usually the best investments.</p>
+            <p>20% in a fund holding major tech companies. AI is going to be extremely profitable in the next few years so I should invest now before that happens.</p>
+            <p>20% in a fund holding all US companies. The US market has outperformed the rest of the world over long stretches of time, and because of that I know the US is a more profitable place to invest than all other countries.</p>
+            <p>10% in Tesla stock. Tesla is a very risky investment due to Elon Musk's questionable business acumen, and higher risk means higher rewards.</p>
+            <p>10% in fund which only invests in companies that give large monthly cash payments (dividends) to its investors. Dividends provide stability, and it's free monthly money.</p>
+            <h1>All five investments are at odds with modern investment theory. Do you know why?</h1>
         </div>
     </div>
 </div>

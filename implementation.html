@@ -113,6 +113,11 @@
 
         img { width: 100%; display: block; }
 
+        .comparison-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.85rem; line-height: 1.5; }
+        .comparison-table th, .comparison-table td { padding: 12px 14px; border: 1px solid #e0e0e0; text-align: left; vertical-align: top; }
+        .comparison-table th { background: var(--muted-blue); font-family: 'Inter', sans-serif; font-weight: 600; color: #34495e; }
+        .table-heading { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.1rem; color: #34495e; margin-top: 3rem; margin-bottom: 0.5rem; }
+
         footer { text-align: center; padding: 20vh 0; opacity: 0.2; font-family: 'Inter'; font-size: 0.8rem; }
     </style>
 </head>
@@ -122,28 +127,91 @@
 
 <div class="container" id="reading-content">
     <h3><a href="index.html" style="text-decoration: none; font-size: 30px;">
-    &#8592; Back to Part 1</a></h3>
+    &#8592; Back to Part 1: The Ideas</a></h3>
     <header class="reveal-node">
         <div class="meta-info">
             <span id="reading-time"></span>
         </div>
         <h1>Investing Made Easy</h1>
-        <p style="font-style: italic; color: #636e72;">Time to apply those ideas to currently available financial products to create a convenient, tax-efficient and highly optimized portfolio that maximizes median expected returns.</p>
+        <p style="font-style: italic; color: #636e72;">Time to apply those ideas to currently available financial products to create a convenient, tax-efficient and highly optimized portfolio that maximizes expected returns.</p>
     </header>
 
     <section>
         <h2 class="reveal-node">Implementing Those Ideas Into Your Portfolio</h2>
-        <p class="reveal-node">The ideal portfolio should contain only stocks which are discounted by market risk. And it should be diversified as well as possible, to reduce diversifiable risk (which lowers median expected returns) and to ensure it holds all the mega-winners. But <b>all stocks are exposed to market risk</b>, because <b>market risk is the risk you take for investing in the market at all</b><sup>[6]</sup>.</p>
+        <p class="reveal-node">The ideal portfolio should contain only stocks which are discounted by market risk. And it should be diversified as well as possible, to reduce diversifiable risk (which lowers median expected returns) and to ensure it holds all the mega-winners. But <b>all stocks are exposed to market risk</b>, because <b>market risk is the risk you take for investing in the market at all</b><sup>[6]</sup>. Unless you have information about a stock that is not already reflected in prices, it also makes sense to invest by buying the same percent of all companies because we don't know what company will turn into the next mega-winner.</p>
 
-       <p class="reveal-node"><b>Thus, a portfolio of all the stocks in the world will be the best-diversified portfolio to capture market risk – and VT (the ticker symbol for the Vanguard Total World Stock Fund) is that portfolio.</b> VT bundles all the world’s stocks together into a single convenient low-cost fund. <b>Worldwide diversification in particular is important for any rational portfolio</b> – Japan was once the world’s second largest and fastest growing economy, and it suffered a crash 30 years ago that it still hasn’t recovered from. Even though a single country may never recover from a crash, the world as a whole <b><i>will</i></b>.</p>
+       <p class="reveal-node"><b>Thus, a portfolio of all the stocks in the world will be the best-diversified portfolio to capture market risk – and VT (the ticker symbol for the Vanguard Total World Stock Fund) is that portfolio.</b> VT is a "total world index fund", so buyers are buying a small percent of all public companies in the world, and it is "market-cap weighted" which means that you will own the same percent of each company in the fund.<b>Worldwide diversification in particular is important for any rational portfolio</b> – Japan was once the world’s second largest and fastest growing economy, and it suffered a crash 30 years ago that it still hasn’t recovered from. Even though a single country may never recover from a crash, the world as a whole <b><i>will</i></b>.</p>
 
         <p class="reveal-node"><strong>As long as your investments are diversified, the most threatening risk to your profits is your own psychological tolerance to short-term volatility.</strong> Investors often panic-sell during crashes and this can cripple long-term goals. If you want to reduce psychological risk, and suspect you might panic if the market crashes, <strong>you can reduce volatility by adding BNDW, an index of all the world&rsquo;s bonds. </strong>Use a <a href="https://www.bogleheads.org/wiki/Asset_allocation">resource like this</a> to help you decide if you&rsquo;d like to reduce psychological risk, and by how much.</p>
-<p class="reveal-node">When a company decides to lower its stock value and give you that lowered value as cash, that is called a dividend. Ensure you <strong>automatically reinvest dividends</strong> for all purchased funds, or else they will become uninvested over time. And <strong>expense ratios compound, so they must be kept as low as possible. </strong>A 1% expense ratio means after 40 years you will only have</p>
-<p class="reveal-node">(99%)<sup>40</sup> = 0.99<sup>40</sup> = 67% of your money, meaning<strong> the expense cost you a third of your retirement funds, </strong>while a 0.06% expense ratio will leave you with 0.9994<sup>40</sup> = 97.6% after 40 years.</p>
-<p class="reveal-node">As long as you have taxable income during a year, you can contribute that income to a Roth or Trad IRA and a Roth or Trad 401K for retirement and get a tax advantage. <strong>Roth contributions are taxed as income the year you make them, whereas Trad contributions are taxed as income during retirement, so contribute Roth whenever your current income is less than your expected income during retirement and you should contribute Trad when your current income is more than your retirement income</strong>. Withdrawing money from your Trad IRA/401K and standard investment accounts <strong>does</strong> count as income, while Roth withdrawals <strong>do not count. </strong><strong>If your tax bracket is the same during retirement and employment, it does not matter which one you choose because of the commutativity of multiplication.</strong> That is, </p>
-<p class="reveal-node"><strong>(20% lost from tax) 0.8 * 1.08 * 1.08 * &hellip; * 1.08 (market gains) = 1.08 * 1.08 * 1.08 * &hellip; * 0.8</strong></p>
-<p class="reveal-node"><br /><strong>For most people, investing has a &ldquo;best strategy&rdquo;</strong> <strong>Buy VT and contribute to a Roth/Trad IRA &amp; 401K. Do not sell until retirement, especially in response to underperformance. Find an appropriate </strong><a href="https://www.bogleheads.org/wiki/Asset_allocation"><strong>psychological risk vs. return tradeoff</strong></a><strong>, choose to contribute Roth vs. Trad based on your current tax bracket, and ensure you reinvest dividends automatically. </strong></p>
+<p class="reveal-node">When a company decides to lower its stock value and give you that lowered value as cash, that is called a dividend. Ensure you <strong>automatically reinvest dividends</strong> for all purchased funds, or else they will become uninvested over time. And <strong>expense ratios compound, so they must be kept as low as possible. </strong>A 1% expense ratio means after 40 years you will only have (99%)<sup>40</sup> = 0.99<sup>40</sup> = 67% of your money, meaning<strong> the expense cost you a third of your retirement funds, </strong>while VT's 0.06% expense ratio will leave you with 0.9994<sup>40</sup> = 97.6% of your money intact after 40 years.</p>
+<p class="reveal-node">As long as you have taxable income during a year, you can contribute that income to a Roth or Trad IRA and a Roth or Trad 401K for retirement and get a tax advantage. <strong>Roth contributions are taxed as income the year you make them, whereas Trad contributions are taxed as income during retirement, so contribute Roth whenever your current income is less than your expected income during retirement and you should contribute Trad when your current income is more than your retirement income</strong>. Withdrawing money from your Trad IRA/401K and standard investment accounts <strong>does</strong> count as income, while Roth withdrawals <strong>do not count. </strong><strong>If your tax bracket is the same during retirement and employment, it does not matter which one you choose because of the commutativity of multiplication.</strong>
+    However, most Americans contribute so little to their retirement accounts that their retirement tax bracket would be 0%, resulting in Trad being a superior choice.</p>
+<p class="reveal-node"><strong>For most people, investing has a clear winning strategy.</strong> <strong>Buy VT and contribute to a Roth/Trad IRA &amp; 401K. Do not sell until retirement, especially in response to underperformance. Find an appropriate </strong><a href="https://www.bogleheads.org/wiki/Asset_allocation"><strong>psychological risk vs. return tradeoff</strong></a><strong>, choose to contribute Roth vs. Trad based on your current tax bracket, and ensure you reinvest dividends automatically. </strong></p>
 
+
+        <div style="margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 15px;">
+            <a href="appendix.html" style="text-decoration: none; font-size: 30px;">Appendix: Roth &amp; Trad Cheat Sheet &#10142;</a>
+        </div>
+
+        <div class="reveal-node" style="margin-top: 4rem;">
+            <h2 style="margin-top: 0;">Comparison of Other Viable Strategies Other Than VT</h2>
+
+            <p class="table-heading">Investment Comparison Chart</p>
+            <table class="comparison-table">
+                <tr><th>Symbol(s)</th><th>Explanation</th><th>Expense Ratio Per Year &amp; Percent Lost After 40 Years</th></tr>
+                <tr><td><b>100% VT</b></td><td>Portfolio tracking the whole world's stocks. The simplest and most easily explainable choice, making it easy to commit to. Automatically increases or decreases company &amp; country weights based on current market dominance.</td><td>0.06%, (1-.0006)<sup>40</sup> = 97.6% =&gt; 2.4% lost after 40 years.</td></tr>
+            </table>
+
+            <p class="table-heading">Higher Complexity &amp; Maintenance, Slightly Higher Return</p>
+            <table class="comparison-table">
+                <tr><th>Symbol(s)</th><th>Explanation</th><th>Expense After 40 Years</th></tr>
+                <tr><td><b>X% VTI + Y% VXUS</b></td><td>VTI is a portfolio tracking the US's stocks and VXUS is a portfolio tracking all non-US Stocks. Currently 60% of VT is US and 40% is VXUS. Adding them independently to your portfolio you can control the US/non-US split and it should be somewhere between 33-66% for each. Lower expenses but you have to rebalance weights when US dominance increases or decreases if you want the theoretically best portfolio.</td><td>VTI: 1.2% lost after 40 years. VXUS: 2% lost.</td></tr>
+                <tr><td><b>X% FZROX + Y% FZILX</b></td><td>FZROX is a portfolio tracking the US's stocks and FZILX is a portfolio tracking all non-US Stocks, both only offered at Fidelity. If you switch to a different brokerage, you will have to sell the investment, which means you will pay taxes if it is in a non-tax advantaged account. Tracks in-house benchmark for US market, not a publicly available &amp; visible one. Only recommended tax-advantaged accounts for IRAs, 401ks, HSAs, etc. Otherwise, same notes as VTI/VXUS.</td><td>0% expenses.</td></tr>
+            </table>
+
+            <p class="table-heading">Decreasing Short-Term Risk &amp; Long-Term Returns</p>
+            <table class="comparison-table">
+                <tr><th>Symbol</th><th>Explanation</th><th>Expense After 40 Years</th></tr>
+                <tr><td><b>X% VT + Y% BNDW</b></td><td>BNDW is an automated portfolio tracking the whole world's bonds. Make X higher to increase short-term risk, psychological risk, and long-term profits. Make Y higher to decrease all those.</td><td>VT: 2.4% lost after 40 years. BNDW: 2% lost after 40 years.</td></tr>
+                <tr><td><b>VSVNX</b></td><td>Fund that is 92% stocks and 8% bonds, and will slowly increase the bond % and decrease the stock % until 2070, when it will be 50/50 stocks &amp; bonds. Like VT, this is a simple one-fund choice, but it is better for people more prone to psychological sell-risk during crashes.</td><td>0.08%, 3.15% lost after 40 years.</td></tr>
+            </table>
+
+            <p class="table-heading">Add These To Increase Short-Term Risk &amp; Long-Term Returns (Read Bonus Section)</p>
+            <table class="comparison-table">
+                <tr><th>Symbol</th><th>Explanation</th><th>Expense After 40 Years</th></tr>
+                <tr><td><b>AVUV</b></td><td>Portfolio tracking US small-cap value, with additional CMA targeting. SMB=0.79, HML=0.73, R<sup>2</sup>=97%</td><td>0.25%, 9.6% lost</td></tr>
+                <tr><td><b>AVDV</b></td><td>Portfolio tracking non-US small-cap value. SMB=0.06, HML=0.41, R<sup>2</sup>=77.5%</td><td>0.36%, 13.5% lost</td></tr>
+                <tr><td><b>VFMO</b></td><td>Portfolio tracking US momentum. SMB=0.59, HML=0.16, MOM=0.39, R<sup>2</sup>=95.6%</td><td>0.13%, 5.1% lost</td></tr>
+            </table>
+        </div>
+
+        <div style="margin: 0 auto; text-align: center;">
+            <a href="bonus.html" style="text-decoration: none; font-size: 30px;">Bonus Content: Beating The Market &#10142;</a>
+        </div>
+
+        <div class="reveal-node" style="margin-top: 4rem;">
+            <h1 style="margin-top: 0;">References</h1>
+
+            <h2><b>Technical:</b></h2>
+            <p>[1] – <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3197185">Buffet's Alpha</a></p>
+            <p>[2] – <a href="https://www.spglobal.com/spdji/en/spiva/article/us-persistence-scorecard/">SPIVA Persistence Scorecard</a></p>
+            <p>[3] – <a href="https://mba.tuck.dartmouth.edu/bespeneckbo/default/AFA611-Eckbo%20web%20site/AFA611-S8C-FamaFrench-LuckvSkill-JF10.pdf">Luck vs Skill in the Cross Section of Mutual Fund Returns</a></p>
+            <p>[4] – <a href="https://web.stanford.edu/~wfsharpe/art/active/active.htm">The Arithmetic of Active Management</a></p>
+            <p>[5] – <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2900447">Do Stocks Outperform Treasury Bills?</a></p>
+            <p>[6] – <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1540-6261.1964.tb02865.x">Capital Asset Prices: A Theory of Market Equilibrium Under Conditions of Risk</a></p>
+            <p>[7] – <a href="https://www.math.hkust.edu.hk/~maykwok/courses/ma362/07F/markowitz_JF.pdf">Portfolio Selection</a></p>
+            <p>Textbook: Ch. 1-4 of <a href="https://gpennacc.web.illinois.edu/TAP_Aug2020_FrontMatter.pdf">Theory of Asset Pricing</a> by George Penacchi</p>
+
+            <h2><b>Easier-To-Understand:</b></h2>
+            <p><i>Videos (helpful for understanding the key ideas)</i></p>
+            <p><a href="https://www.youtube.com/watch?v=Nv5CiRSCVxA">The Case For Index Funds</a></p>
+            <p><a href="https://www.youtube.com/watch?v=rbPVTqd468c">Is The Market Efficient?</a></p>
+            <p><a href="https://www.youtube.com/watch?v=1Ob-hAYCnJE">Investing 101</a></p>
+
+            <p><i>Webpages (helpful for understanding implementation of those ideas)</i></p>
+            <p><a href="https://www.bogleheads.org/wiki/Bogleheads%C2%AE_investing_start-up_kit">Investing Start-Up Kit</a></p>
+            <p><a href="https://www.bogleheads.org/wiki/Asset_allocation">Asset Allocation</a></p>
+        </div>
 
     <footer class="reveal-node">
         Written by Matthew Chun | 2026

@@ -138,7 +138,8 @@
 }
 
 .expandable-box {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     max-height: 1px;
     background-color: transparent;
     border-top: 1px solid var(--line-color);
@@ -336,7 +337,7 @@
     // 3. Spotlight Reveal Logic
     const observerOptions = {
         root: null,
-        rootMargin: '-5% 0px -25% 0px', 
+        rootMargin: '-5% 0px -25% 0px',
         threshold: 0.1
     };
 
